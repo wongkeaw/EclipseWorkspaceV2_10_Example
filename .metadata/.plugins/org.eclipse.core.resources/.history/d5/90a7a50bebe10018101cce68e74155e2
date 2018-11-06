@@ -1,0 +1,34 @@
+package com.example.test3;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class test03 {
+
+	public test03() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String S = "John Doe;John Doe;John Doe;John Doe; Peter Benjamin Parker; Mary Jane Watson-Parker; John Elvis Doe; John Evan Doe; Jane Doe; Peter Brian Parker" ;
+		String C = "Example"  ;
+		System.out.println("Original Name :"+S);
+		sulution3 sol = new sulution3() ;
+		String msg = sol.solution(S, C) ;
+		System.out.println("Modify Name :"+msg);
+	}
+	
+
+}
+class sulution3 {
+	public String solution(String S, String C) {
+		String[] ml = S.split(";") ;
+		System.out.println(ml);
+		List<String> numbers = Arrays.asList( S.split(";")) ;
+		ml.sort(String.CASE_INSENSITIVE_ORDER);
+		System.out.println(ml);
+		return null ;
+	}
+}

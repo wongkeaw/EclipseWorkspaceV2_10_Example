@@ -1,0 +1,27 @@
+package com.example.test3;
+
+public class test03 {
+
+	public test03() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String S = "John Doe;John Doe;John Doe;John Doe; Peter Benjamin Parker; Mary Jane Watson-Parker; John Elvis Doe; John Evan Doe; Jane Doe; Peter Brian Parker" ;
+		String C = "Example"  ;
+		System.out.println("Original Name :"+S);
+		Solution3 sol = new Solution3() ;
+		String msg = sol.solution(S, C) ;
+		System.out.println("Modify Name :"+msg);
+	}
+	
+
+}
+class sulution3 {
+	public String solution(String S, String C) {
+		
+		return null ;
+	}
+}

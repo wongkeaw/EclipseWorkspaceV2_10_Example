@@ -11,7 +11,7 @@ public class test02 {
 	}
 
 	public static void main(String[] args) {
-		String S = "John Doe;John Doe;John Doe;John Doe; Peter Benjamin Parker; Mary Jane Watson-Parker; John Elvis Doe; John Evan Doe; Jane Doe; Peter Brian Parker" ;
+		String S = "John aa Doe;John bb Doe;John Doe;John Doe; Peter Benjamin Parker; Mary Jane Watson-Parker; John Elvis Doe; John Evan Doe; Jane Doe; Peter Brian Parker" ;
 		String C = "Example"  ;
 		System.out.println("Original Name :"+S);
 		Solution2 sol = new Solution2() ;
@@ -25,7 +25,7 @@ public class test02 {
 class Solution2 { 
 	public String solution(String S, String C) {
 		// TODO Auto-generated method stub
-		StringBuffer returnValue = new StringBuffer() ;
+		StringBuilder returnValue = new StringBuilder() ;
 		StringTokenizer st = new StringTokenizer(S, ";") ;
 		List<String> nameList = new ArrayList<String>() ;
 		while (st.hasMoreElements()) {
