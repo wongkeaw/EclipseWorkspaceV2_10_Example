@@ -1,6 +1,6 @@
 package com.example.test3;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class test01 {
@@ -24,7 +24,7 @@ public class test01 {
 }
 class Solution {
 	   
-		private List<String> pl = new ArrayList<String>() ;
+		private List<String> pl = new LinkedList<String>() ;
 		private String msg ;
 		private int fix , index ;
 		private boolean outOfLength = false ;
@@ -32,14 +32,16 @@ class Solution {
 		public int solution(String S, int K) {
 			msg = S ;
 			fix = K ;
+			System.out.println(" text :"+msg);
+			System.out.println(" max length of Message : "+fix);
 			solution();
-			System.out.println(pl);
+			System.out.println("list of Message : " + pl);
 		   	return outOfLength ? -1 : pl.size() ;
 		}
 		private void  solution() {
 			msg = msg.trim() ;
-			//System.out.println("msg :"+msg);
 			if (msg.length() == 0 ) return ;
+			//System.out.println("msg :"+msg);
 			index = msg.lastIndexOf(" ",fix ) ;
 			if (msg.length() <= fix) index = msg.length()  ;  // case message length < fix size
 			//System.out.println(" index "+index);

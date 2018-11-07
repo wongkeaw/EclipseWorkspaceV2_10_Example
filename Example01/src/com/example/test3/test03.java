@@ -24,12 +24,10 @@ public class test03 {
 }
 class sulution3 {
 	public String solution(String S, String C) {
-		//String[] ml = S.split(";") ;
-		//System.out.println(ml);
 		Set<String> nameList = new HashSet<String>() ;
 		StringBuilder returnValue = new StringBuilder() ;
 		for (String obj : S.split(";") ) {
-			//System.out.println("full name :"+obj);
+			System.out.print("full name :"+obj );
 			String a = obj.substring(0,obj.trim().indexOf(" ")).trim() ;
 			String b = obj.substring(obj.trim().lastIndexOf(" ")+1).trim() ;
 			String name = new StringBuffer(a).append(".").append(b).toString() ;
@@ -40,11 +38,10 @@ class sulution3 {
 			}
 			nameList.add(name) ;
 			StringBuilder sb = new StringBuilder() ;
-			sb.append(" <").append(name).append("@").append(C).append(".com>") ;
-			//System.out.println(sb.toString());
-			returnValue.append(obj).append(sb).append("; ") ;
+			sb.append(obj).append("<").append(name).append("@").append(C).append(".com>;") ;
+			System.out.println(" , Modify Name :"+sb );
+			returnValue.append(sb) ;
 		}
-		System.out.println(returnValue);
-		return null ;
+		return returnValue.toString() ;
 	}
 }

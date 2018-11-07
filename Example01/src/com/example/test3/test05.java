@@ -28,9 +28,6 @@ class sulution05{
 			System.out.println("index at: "+j+" Original value "+i[j]  +" Order by Value :"+ai.get(j));
 			if (  i[j] != ai.get(j) && ++x > 2 ) return false ;
 		}
-		
 		return true ;
-		//System.out.println(x);
-		//return x <= 2 ? true : false ;
 	}
 }
