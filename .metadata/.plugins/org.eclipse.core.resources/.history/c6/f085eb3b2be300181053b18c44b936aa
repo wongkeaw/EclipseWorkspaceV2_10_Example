@@ -1,0 +1,37 @@
+package com.example.test3;
+
+import java.text.DecimalFormat;
+
+public class test07 {
+
+	public test07() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String S = "00-44 48  5555 8361" ;
+		String result = new sulution07().sulution(S) ;
+
+	}
+
+}
+class sulution07{
+	// O(n)
+	public String sulution(String S) {
+		System.out.println(S);
+		String num = S.replaceAll("[^0-9]", "") ;
+		char[] chars = num.toCharArray();
+		System.out.println(num);
+		String phoneFmt = "###-###-###-###-##" ;
+		for (char c : chars) {
+			phoneFmt.replaceFirst("#", String.valueOf(c)) ;
+		}
+		System.out.println("xxx" +phoneFmt);
+		
+		
+		//System.out.println(phoneMsgFmt.format(phoneNumArr));
+		
+		return null ;
+	}
+}

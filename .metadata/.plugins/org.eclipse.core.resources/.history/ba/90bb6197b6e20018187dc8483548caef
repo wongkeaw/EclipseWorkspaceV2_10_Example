@@ -1,0 +1,39 @@
+package com.example.test3;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class test05 {
+
+	public test05() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] i = {5,2,3,4,1,6,7,8} ;
+		boolean b = new sulution05().sulution(i);
+		System.out.println(b);
+	}
+
+}
+class sulution05{
+	// O(n)
+	public boolean sulution(int[] i) {
+		int[] ints = i.clone() ;
+		//begin convert int[] ==> List<Integer>
+		List<Integer> ai = new ArrayList<Integer>() {{ for (int k : ints) add(k); }} ; 
+		//List<Integer> ai = Arrays.stream(ints).boxed().collect(Collectors.toList());
+		//end convert int[] ==> List<Integer>
+		ai.sort(Comparator.naturalOrder());
+		int x = 0 ;
+		for (int j = 0; j < i.length; j++) {
+			System.out.println("index at: "+j+" Original value "+i[j]  +" Order by Value :"+ai.get(j));
+			if (  i[j] != ai.get(j) && ++x > 2  ) return false ;
+		}
+		return true ;
+	}
+}

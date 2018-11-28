@@ -1,8 +1,10 @@
 package com.example.test3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class test05 {
 
@@ -12,22 +14,37 @@ public class test05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Integer[] i = {5,2,3,4,1,6 ,1} ;
-		boolean b = new sulution05().sulution(i);
+		int[] i = {1,10,2,3,4,6,7,8,9,10} ;
+		int b = new sulution05().sulutionx(i);
 		System.out.println(b);
 	}
 
 }
 class sulution05{
 	// O(n)
-	public boolean sulution(Integer[] i) {
-		List<Integer> ai = Arrays.asList(i.clone());
+	int focust = -1 ;
+	int count = -1 ;
+	public int sulution(int[] i) {
+		int[] ints = i.clone() ;
+		while(focust == -1) {
+			sulutionx(i) ;
+		};
+		return focust ;
+	}
+	public int sulutionx(int[] i) {
+		int[] ints = i.clone() ;
+		
+		@SuppressWarnings("serial")
+		List<Integer> ai = Arrays.stream(ints).boxed().collect(Collectors.toList());
 		ai.sort(Comparator.naturalOrder());
 		int x = 0 ;
 		for (int j = 0; j < i.length; j++) {
-			System.out.println("index at: "+j+" Original value "+i[j]  +" Order by Value :"+ai.get(j));
-			if (  i[j] != ai.get(j) && ++x > 2 ) return false ;
+			System.out.println("index at: "+j+" Original value : "+i[j]  +" Order by Value : "+ai.get(j));
+			if (  i[j] != ai.get(j) && ++x > 2  ) {
+				return 0 ;
+			};
 		}
-		return true ;
+		System.out.println(focust);
+		return i.length ;
 	}
 }

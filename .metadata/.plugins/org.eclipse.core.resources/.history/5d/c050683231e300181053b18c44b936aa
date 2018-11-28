@@ -1,0 +1,23 @@
+package com.example.test3;
+
+public class test8 {
+
+	public test8() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] S = {1,2,3,4} ;
+		int result = new sulution08().sulution(S) ;
+		System.out.println("Result : "+result );
+	}
+
+}
+class sulution08{
+	// O(n)
+	public int sulution(int[] a) {
+		
+		return 0 ;
+	}
+}
